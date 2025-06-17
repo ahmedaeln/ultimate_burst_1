@@ -1,0 +1,179 @@
+﻿<!-- START OF FILE index.html (MODIFIED) -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Ultimate Burst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="public/images/ultimate_burst_logo.png" sizes="32x32">
+</head>
+<body>
+
+    <!-- شاشة التحميل -->
+    <div id="loadingScreen">
+      <div class="loading-box">
+        <p class="loading-text" id="loadingScreenText">جاري تحميل اللعبة...</p>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- شاشة البداية -->
+    <div id="startScreenContainer" style="display:none;">
+        <div>
+            <div class="top-buttons">
+                <div class="icon-button-group"><img src="public/images/help.png" id="helpBtnStart" class="icon-button" alt="التعليمات"></div>
+                <div id="scoreCounterStart">النقاط: 0</div>
+                <div class="icon-button-group"><img src="public/images/settings.png" id="settingsBtnStart" class="icon-button" alt="الإعدادات"></div>
+            </div>
+            <p style="font-size: clamp(1em, 4vw, 1.3em); color: #e0e0e0; margin-bottom: 20px;">Ultimate Burst انطلق في مهمة الابطال انقذ العالم بقوة </p>
+            <button id="openShopBtnStartScreen"><img src="public/images/store.png" alt="المتجر" style="width: 200px; height: auto;"></button>
+            <button id="onlineModeBtn"><img src="public/images/online.png" alt="العب اون لاين"></button>
+            <button id="showLevelSelectBtnFromStart"><img src="public/images/start.png" alt="ابدأ المغامرة"></button>
+        </div>
+    </div>
+
+    <!-- شاشة البحث عن لاعبين -->
+    <div id="matchmakingScreenContainer" style="display: none;">
+        <div class="pause-box">
+            <h2 id="matchmakingStatusText">جاري البحث عن خصم...</h2>
+            <div class="spinner"></div>
+            <p style="color: #ccc; font-size: 0.9em; margin-top: 20px;">قد يستغرق الأمر بضع لحظات</p>
+            <button id="cancelMatchmakingBtn" class="pause-menu-button" style="background-color: #aa0000; margin-top: 30px;">إلغاء</button>
+        </div>
+    </div>
+
+
+    <!-- شاشة اختيار المستوى -->
+    <div id="levelSelectScreenContainer" style="display:none;">
+        <div>
+            <h1>اختر المستوى</h1>
+            <div class="level-buttons">
+                <button class="level-button" data-level="1"><img src="public/images/background_level_1.jpg" alt="المستوى 1"></button>
+                <button class="level-button" data-level="2"><img src="public/images/background_level_2.jpg" alt="المستوى 2"></button>
+                <button class="level-button" data-level="3"><img src="public/images/background_level_3.gif" alt="المستوى 3"></button>
+                <button class="level-button" data-level="4"><img src="public/images/background_level_4.jpg" alt="المستوى 4"></button>
+                <button class="level-button" data-level="5"><img src="public/images/background_level_5.jpg" alt="المستوى 5"></button>
+                <button class="level-button" data-level="6"><img src="public/images/background_level_6.gif" alt="المستوى 6"></button>
+                <button class="level-button" data-level="7"><img src="public/images/background_level_7.jpg" alt="المستوى 7"></button>
+                <button class="level-button" data-level="8"><img src="public/images/background_level_8.jpg" alt="المستوى 8"></button>
+                <button class="level-button" data-level="9"><img src="public/images/backfight.jpg" alt="المستوى 9"></button>
+            </div>
+            <button id="startGameFromLevelSelectBtn"><img src="public/images/start.png" alt="ابدأ اللعبة"></button>
+        </div>
+    </div>
+
+    <!-- شاشة المتجر -->
+    <div id="shopOverlayScreenContainer" style="display:none;">
+        <div>
+            <img src="public/images/close.png" id="closeShopBtnTop" class="shop-close-top-button" alt="إغلاق">
+            <h1>المتجر</h1>
+            <div class="shop-items">
+                <div class="shop-item" data-item-id="select_default"><img src="public/images/transform/transform11.png" alt="التحول الافتراضي"><div class="name">🚀 Burst</div><div class="price" data-price="0">مجاني</div><button class="select-button"></button></div>
+                <div class="shop-item" data-item-id="select_staron"><img src="public/images/staron/staronup.png" alt="Staron"><div class="name">🌟 Staron</div><div class="price" data-price="30">السعر: 30 نقطة</div><button class="select-button"></button></div>
+                <div class="shop-item" data-item-id="invisibility"><img src="public/images/shop/hide.png" alt="اختفاء"><div class="name">🌀 الاختفاء</div><div class="price" data-price="15">السعر: 15 نقطة</div><button class="buy-button"></button></div>
+                <div class="shop-item" data-item-id="shield"><img src="public/images/shop/tect.png" alt="درع"><div class="name">🛡️ درع 3 ثواني</div><div class="price" data-price="18">السعر: 18 نقطة</div><button class="buy-button"></button></div>
+                <div class="shop-item" data-item-id="transform_duration"><img src="https://i.postimg.cc/7Z9GCmxN/42b078a6f7954b4181ef3c6447a51b7f.png" alt="مدة التحول"><div class="name">🔥 زيادة مدة التحول</div><div class="price" data-price="10">السعر: 10 نقطة</div><button class="buy-button"></button></div>
+                <div class="shop-item" data-item-id="double_jump"><img src="public/images/shop/jump.gif" alt="قفزة"><div class="name">🚀 قفزة مضاعفة</div><div class="price" data-price="8">السعر: 8 نقاط</div><button class="buy-button"></button></div>
+                <div class="shop-item" data-item-id="cooldown_reduction"><img src="public/images/shop/time.png" alt="تقليل التهدئة"><div class="name">⚡️ تقليل مدة التهدئة</div><div class="price" data-price="3">السعر: 3 نقاط</div><button class="buy-button"></button></div>
+                <div class="shop-item" data-item-id="extra_life"><img src="public/images/shop/heart.png" alt="حياة إضافية"><div class="name">❤️ حياة إضافية</div><div class="price" data-price="25">السعر: 25 نقطة</div><button class="buy-button"></button></div>
+                <div class="shop-item" data-item-id="score_multiplier"><img src="public/images/shop/dubel.png" alt="مضاعف نقاط"><div class="name">💰 مضاعف نقاط (شكلي)</div><div class="price" data-price="15">السعر: 15 نقطة</div><button class="buy-button"></button></div>
+                <div class="shop-item" data-item-id="finisher_ability"><img src="public/images/shop/finsher.png" alt="الضربة القاضية"><div class="name">💥 الضربة القاضية</div><div class="price" data-price="10">السعر: 10 نقطة</div><button class="buy-button"></button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- حاوية اللعبة -->
+    <div id="gameContainer" style="display: none;">
+        <img src="public/images/pause.png" id="pauseButton" class="game-icon-button" alt="إيقاف مؤقت" style="display: none;">
+        <h1 id="gameTitle"></h1>
+        <canvas id="gameCanvas"></canvas>
+        <div id="onScreenControls">
+            <div id="movementControlsContainer">
+                <button id="btnFinisher" class="control-button"></button>
+                <button id="btnUp" class="control-button dpad-button move-up"></button>
+                <div class="dpad-vertical-second">
+                   <button id="btnDown" class="control-button dpad-button move-down"></button>
+                </div>
+                <div class="dpad-horizontal">
+                    <button id="btnRight" class="control-button dpad-button move-right"></button>
+                    <button id="btnLeft" class="control-button dpad-button move-left"></button>
+                </div>
+            </div>
+            <div id="actionControlsContainer">
+                <button id="btnShield" class="control-button action-button" style="display: none;"></button>
+                <button id="btnInvisibility" class="control-button action-button" style="display: none;"></button>
+                <button id="btnKick" class="control-button action-button"></button>
+                <button id="btnSpecial" class="control-button action-button"></button>
+                <button id="btnShoot" class="control-button action-button"></button>
+            </div>
+        </div>
+        <div id="messageOverlay">
+            <div id="messageText"></div>
+            <button id="retryButton">إعادة المحاولة</button>
+        </div>
+        <div id="pauseScreenOverlay" style="display: none;">
+            <div class="pause-box">
+                <h2>اللعبة متوقفة مؤقتًا</h2>
+                <button id="resumeButton" class="pause-menu-button">استئناف اللعب</button>
+                <button id="backToMainButton" class="pause-menu-button">العودة إلى الرئيسية</button>
+            </div>
+        </div>
+        <!-- ### NEW: شاشة الفوز ### -->
+        <div id="winScreenOverlay" style="display: none;">
+            <div class="pause-box">
+                <h2 id="winScreenMessage">أحسنت!</h2>
+                <div id="winScreenStarsContainer"></div>
+                <div id="winScreenButtonContainer" style="display: none;">
+                    <button id="winScreenNextLevelBtn" class="pause-menu-button">المستوى التالي</button>
+                    <button id="winScreenReplayBtn" class="pause-menu-button" style="background-color: #007799;">إعادة المستوى</button>
+                    <button id="winScreenMainMenuBtn" class="pause-menu-button" style="background-color: #993333;">العودة للرئيسية</button>
+                </div>
+            </div>
+        </div>
+        <div id="transformationSelectOverlay" style="display: none;">
+            <div class="pause-box">
+                <h2>اختر التحول</h2>
+                <div class="transform-selection-buttons"></div>
+                <button id="cancelTransformButton" class="pause-menu-button" style="background-color: #aa0000; margin-top: 20px;">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- عناصر الصوت -->
+    <audio id="transformSound" src="public/audio/transform.mp3" preload="auto"></audio>
+    <audio id="shootSound" src="public/audio/shoot.mp3" preload="auto"></audio>
+    <audio id="winSound" src="public/audio/level_win.mp3" preload="auto"></audio>
+    <audio id="loseSound" src="public/audio/game_over.mp3" preload="auto"></audio>
+    <audio id="finisherActivateSound" src="public/audio/finisher_activate.mp3" preload="auto"></audio>
+    <audio id="finisherBeamSound" src="public/audio/finisher_beam.mp3" preload="auto"></audio>
+    <audio id="invisibilitySound" src="public/audio/invisibility_on.mp3" preload="auto"></audio>
+    <audio id="shieldActivateSound" src="public/audio/shield_on.mp3" preload="auto"></audio>
+    <audio id="shieldHitSound" src="public/audio/shield_hit.mp3" preload="auto"></audio>
+    <audio id="starAppearSound" src="public/audio/star_appear.mp3" preload="auto"></audio>
+    <audio id="enemyShieldActivateSound" src="public/audio/enemy_shield_on.mp3" preload="auto" ></audio>
+    <audio id="playerKickSound" src="public/audio/player_kick.mp3" preload="auto"></audio>
+    <audio id="lionRoarSound" src="public/audio/lion_roar.mp3" preload="auto"></audio>
+    <audio id="swordCutSound" src="public/audio/sword_cut.mp3" preload="auto"></audio>
+
+
+    <!-- ملفات الجافاسكربت -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="public/js/utils.js" defer></script>
+    <script src="public/js/config_assets.js" defer></script>
+    <script src="public/js/player.js" defer></script>
+    <script src="public/js/enemy_main.js" defer></script>
+    <script src="public/js/enemies_flying.js" defer></script>
+    <script src="public/js/enemies_ground.js" defer></script>
+    <script src="public/js/world.js" defer></script>
+    <script src="public/js/ui_interface.js" defer></script>
+    <script src="public/js/online.js" defer></script>
+    <script src="public/js/main_render.js" defer></script>
+    <script src="public/js/game_loop.js" defer></script>
+    <script src="public/js/core_state_and_init.js" defer></script>
+   
+</body>
+</html>
