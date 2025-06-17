@@ -46,7 +46,7 @@ body, html {
 
 #startScreenContainer {
     display: flex; flex-direction: column; align-items: center; justify-content: center; position: fixed;
-    inset: 0; background-image: url('public/images/intro.png'); background-size: cover;
+    inset: 0; background-image: url('images/intro.png'); background-size: cover;
     background-position: center; background-repeat: no-repeat; z-index: 9999;
     padding: 20px; box-sizing: border-box; text-align: center;
 }
@@ -136,16 +136,16 @@ canvas { border: none; display: block; width: 100%; height: 100%; box-shadow: 0 
     opacity: 0.75;
 }
 
-#btnRight { background-image: url('public/images/right.png'); }
-#btnLeft { background-image: url('public/images/left.png'); }
-#btnUp { background-image: url('public/images/up.png'); }
-#btnDown { background-image: url('public/images/down.png'); display: none; }
-#btnShoot { background-image: url('public/images/fire.png'); }
-#btnSpecial { background-image: url('public/images/transform.png'); }
-#btnKick { background-image: url('public/images/push.png'); opacity: 0.75; }
-#btnInvisibility { background-image: url('public/images/hide.png'); }
-#btnShield { background-image: url('public/images/tect.png'); }
-#btnFinisher { background-image: url('public/images/finisher.png'); }
+#btnRight { background-image: url('images/right.png'); }
+#btnLeft { background-image: url('images/left.png'); }
+#btnUp { background-image: url('images/up.png'); }
+#btnDown { background-image: url('images/down.png'); display: none; }
+#btnShoot { background-image: url('images/fire.png'); }
+#btnSpecial { background-image: url('images/transform.png'); }
+#btnKick { background-image: url('images/push.png'); opacity: 0.75; }
+#btnInvisibility { background-image: url('images/hide.png'); }
+#btnShield { background-image: url('images/tect.png'); }
+#btnFinisher { background-image: url('images/finisher.png'); }
 #btnFinisher { display: none; margin-bottom: 5px; }
 #btnInvisibility, #btnShield, #btnKick { font-size: 1em; }
 
@@ -199,7 +199,7 @@ canvas { border: none; display: block; width: 100%; height: 100%; box-shadow: 0 
 .shop-item .name { font-size: clamp(1em, 3.5vw, 1.15em); margin-bottom: 5px; color: #e0e0e0; }
 .shop-item .price { color: #00ff88; font-weight: bold; font-size: clamp(0.9em, 3vw, 1.05em); margin-bottom: 10px; }
 .shop-item .buy-button {
-    background-image: url('public/images/buy.png'); background-size: contain; background-repeat: no-repeat;
+    background-image: url('images/buy.png'); background-size: contain; background-repeat: no-repeat;
     background-position: center; background-color: transparent; border: none; padding: 25px;
     cursor: pointer; transition: transform 0.1s; width: 90%; margin-top: auto; font-size: 0; color: transparent;
 }
@@ -218,7 +218,7 @@ canvas { border: none; display: block; width: 100%; height: 100%; box-shadow: 0 
 
 .shop-close-top-button {
     position: absolute; top: 15px; right: 15px; width: 45px; height: 45px;
-    background-image: url('public/images/close.png'); background-size: contain; background-repeat: no-repeat;
+    background-image: url('images/close.png'); background-size: contain; background-repeat: no-repeat;
     background-position: center; background-color: transparent; border: none; cursor: pointer;
     transition: transform 0.2s; z-index: 10001; object-fit: contain; padding: 0;
 }
